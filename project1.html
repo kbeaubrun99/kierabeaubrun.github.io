@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Airline Sentiment Project</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Home</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Projects</a></li>
+							<li><a href="generic.html">About Me</a></li>
+                            <li class="active"><a href="project1.html">Sentiment Analysis Project</a></li>
+							<!--<li><a href="elements.html">Elements Reference</a></li> -->
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/kiera-beaubrun-3793301b5/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/kbeaubrun99" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>Airline Sentiment Project</h1>
+								</header>
+                                <span class="image fit"><img src="images/airport copy.jpg" alt="Airport" /></span>
+								<h3>Project goal:</h3>
+                                <p>The goal for this project was to determine customer satisfaction by analyzing tweets from six major airlines. The two main methods to analyze these tweets were sentiment analysis, to determine the sentiment or emotion of the tweet and word clouds, for a visual representation of the most common used words. The six main airlines used were American, Delta, United Airlines, Southwest, US Airways, and Virgin Airlines.</p>
+                                <span class="image fit"><img src="images/uncleanData.jpeg" alt="Uncleaned Data" /></span>
+                                
+                                <h3>Data Cleaning:</h3>
+                                <p>After getting rid of unwanted variables and unwanted characters, this is the new cleaned dataset:</p>
+                                <span class="image fit"><img src="images/cleanData.png" alt="Cleaned Data" /></span>
+                                <p>The first step of the cleaning process included getting rid of variables such as airline_sentiment_confidence, airline_sentiment_gold, negativereason_confidence, and negativereason_gold. The next step was to fix the tweet_id column by getting rid of duplicates so there is a unique identifier for each tweet. The last was to remove the “@airline” tag from each tweet so it does not interfere with any of the text analyses. </p>
+
+                                <h3>Word Clouds:</h3>
+                                <div class="box alt">
+                                    <div class="row gtr-50 gtr-uniform">
+                                        <div class="col-6"><span class="image fit"><img src="images/tweetWordcloud.png" alt="Tweet word cloud" /></span></div>
+                                        <div class="col-6"><span class="image fit"><img src="images/hashtagWordcloud.png" alt="Hashtag word cloud" /></span></div>
+                                    </div>
+                                </div>
+                                <p>Word clouds were used to visualize the overall distribution of words from the tweets. The word “flight” was added to the list of stop words after the initial word cloud creation as it was heavily skewing the distribution. The word cloud on the left uses all of the tweets from the dataset. Overall, you can see the words that you would expect when talking about traveling such as “airport”, “baggage”, and “luggage”. The word cloud on the right uses hashtags from the tweets. With this word cloud you can get a glimpse of some of the issues that customers are dealing with such as poor customer service, baggage, and delayed flights. It is also interesting that all of the hashtags are negative. This already gives an idea of the overall sentiment of the customer tweets.</p>
+
+                                <h3>Sentiment Analysis:</h3>
+                                <p>For the sentiment analysis I used the NRC lexicon which contains words related to eight basic emotions as well as positive and negative. These eight emotions include:</p>
+                                <ul>
+                                    <li>Trust</li>
+                                    <li>Surprise</li>
+                                    <li>Sadness</li>
+                                    <li>Joy</li>
+                                    <li>Fear</li>
+                                    <li>Disgust</li>
+                                    <li>Anticipation</li>
+                                    <li>Anger</li>
+                                </ul>
+                                <p>I felt that the NRC lexicon would be the most useful since it would give us more insight into what customer concerns are and how they are feeling compared to the other two lexicons which use either a number scale or a simple “positive or negative” option.</p>
+                                <span class="image fit"><img src="images/sentimentCount.png" alt="Sentiment Count" /></span>
+                                <p>When I initially did the sentiment analysis I calculated the total for each sentiment per airline but, since there was such a large gap in the number of tweets between each airline it was hard to accurately compare them. In order to compensate for the different number of tweets for each airline I calculated a ratio for each instead. This ratio is calculated by taking the number of each sentiment compared to the total number of tweets for each airline. </p>
+                                <span class="image fit"><img src="images/sentimentRatio.png" alt="Sentiment Ratio" /></span>
+                                <p>As seen in the chart above, Virgin Airlines had the most positive sentiment at 23% while United Airlines had the most negative sentiment at 17%. The high percentages for the feeling of anticipation were understandable due to the nature of flying and being at the airport. This may include being excited for an upcoming trip, the lack of certainty about your luggage making it to your destination, or the chance of your flight being delayed or cancelled. Overall the ratio of sentiment was quite similar for each airline. This may indicate that each airline is facing similar types of issues. </p>
+
+                                <h3>Conclusion:</h3>
+                                <p>In conclusion, we identified the positive, negative, and neutral tweets, and discovered that most of the customers were concerned with delayed or cancelled flights. It appears to be more of an industry issue rather than an individual airline issue. Virgin America did have the most positive sentiment but this could also be due to the lack of tweets for this particular airline. Hypothetically we could use these findings to discuss with the airlines different methods of compensation for delayed or cancelled flights. Perhaps of fliers of cancelled or delayed flights were properly compensated we could negate the potential PR effects of these negative tweets.</p>
+                                <ul class="actions special">
+                                    <li><a href="https://github.com/kbeaubrun99/Senitment-Analysis-Project" class="button primary">Source Code</a></li>
+                                </ul>
+                            </section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<form method="post" action="mailto:k.beaubrun24@gmail.com" enctype="text/plain">
+								<div class="fields">
+									<div class="field">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="3"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" /></li>
+								</ul>
+							</form>
+						</section>
+						<section class="split contact">
+							<section class="alt">
+								<h3>Location</h3>
+								<p>Lutz, FL 33559</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="#">(813) 517-5774</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="mailto:k.beaubrun24@gmail.com">k.beaubrun24@gmail.com</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.linkedin.com/in/kiera-beaubrun-3793301b5/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									<li><a href="https://github.com/kbeaubrun99" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Kiera Beaubrun</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
